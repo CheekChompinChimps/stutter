@@ -4,13 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.scorelab.stutteraid.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         testBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TestDataActivity.class);
+                Intent intent = new Intent(MainActivity.this, com.scorelab.stutteraid.TestDataActivity.class);
                 startActivity(intent);
             }
         });

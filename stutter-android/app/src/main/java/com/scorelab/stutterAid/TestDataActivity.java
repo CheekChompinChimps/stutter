@@ -4,9 +4,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.media.MediaRecorder;
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
@@ -98,7 +99,7 @@ public class TestDataActivity extends AppCompatActivity {
         try {
             String filePath = outputFile + "/" + fileName + ".mp3";
             File file = new File(outputFile + "/" + fileName + ".mp3");
-            UploadHandler uploadHandler = new UploadHandler(filePath,fileName);
+            com.scorelab.stutteraid.UploadHandler uploadHandler = new com.scorelab.stutteraid.UploadHandler(filePath,fileName);
             uploadHandler.execute("http://172.20.5.61:8080/uploadServer/upload.php");
         } catch (Exception e) {
             // show error
@@ -107,7 +108,7 @@ public class TestDataActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Infl4te the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_test_data, menu);
         return true;
     }
